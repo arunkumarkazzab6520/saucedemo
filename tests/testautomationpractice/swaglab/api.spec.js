@@ -17,12 +17,11 @@ test.describe('Reqres API tests', () => {
     await request.dispose()
   })
 
-  test.only('get', async () => {
+  test('get', async () => {
     const response = await request.get('/api/users?page=2')
     expect(response.status()).toBe(200)
 
     const body = await response.json()
-
     expect(Array.isArray(body.data)).toBe(true)
     expect(body.data.length).toBeGreaterThan(0)
 
