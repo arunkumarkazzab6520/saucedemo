@@ -51,7 +51,7 @@ exports.checkout = class checkout
         await this.page.locator("//button[@id='react-burger-menu-btn']").click()
         const logout = await this.page.locator("//a[@id='logout_sidebar_link']")
         await expect(logout).toHaveText("Logout")
-        await this.page.waitForTimeout(3000)
+        // await this.page.waitForTimeout(3000)
         await logout.click()
         await expect(this.page).toHaveURL("https://www.saucedemo.com/")
     }
