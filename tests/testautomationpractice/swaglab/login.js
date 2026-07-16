@@ -8,7 +8,7 @@ exports.login = class login
         //user name and password locators
         this.username = page.getByRole('textbox', { name: 'Username' })
         this.userpassword = page.getByRole('textbox', { name: 'Password' })
-        this.loginButton = page.getByRole('button', { name: 'login-button' })
+        this.loginButton = page.locator("//input[@id='login-button']")
         this.errorMessage = page.locator('[data-test="error"]')
     }
     //login page url
@@ -27,7 +27,7 @@ exports.login = class login
         await expect(this.userpassword).toBeEditable()
         await expect(this.userpassword).toBeEmpty()
         await this.userpassword.fill(password)
-        // await expect(this.loginButton).toBeEnabled()
+        await expect(this.loginButton).toBeEnabled()
         await expect(this.loginButton).toBeVisible()
         await this.loginButton.click()
     }
