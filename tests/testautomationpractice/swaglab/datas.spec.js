@@ -15,12 +15,12 @@ test('test', async ({ page }) =>
         for (const [index,item] of username_passwords.entries()) 
         {
             await data.textbox(item.username, item.password)
-            if (!item.success) 
+            if (!item.success)
                 {
                     await expect(data.errorMessage).toContainText("Epic sadface: Username and password do not match any user in this service")
                     console.log(`Attempt ${index + 1}: Login Failed`)
                     await data.clearFields()
-                } 
+                }
                 else 
                 {
                     await expect(page).toHaveURL(/inventory.html/)

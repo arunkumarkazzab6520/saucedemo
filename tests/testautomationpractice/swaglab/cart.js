@@ -10,7 +10,7 @@ exports.cart = class cart
         this.shoppingcartlist = page.locator('.shopping_cart_badge')
     }
     
-    async addProductsToCart(products) 
+    async addProductsToCart(products)
     {
         for (const product of products)
             {
